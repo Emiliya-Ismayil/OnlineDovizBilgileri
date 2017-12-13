@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
             //Siteden gelen veriyi JSON Objemize atıyoruz
 
             dolar = json.getDouble("dolar");
-            euro = json.getDouble("dolar");
-            dolar2 = json.getDouble("dolar");
-            euro2 = json.getDouble("dolar");
+            euro = json.getDouble("euro");
+            dolar2 = json.getDouble("dolar2");
+            euro2 = json.getDouble("euro2");
 
             LastUptadeTime = json.getString("guncelleme");
             LastRegisterDate = json.getString("sonkayit");
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             dolar_2.setText(dolar2.toString());
             euro_2.setText(euro2.toString());
             UptadeTime.setText(LastUptadeTime.toString()+"/n"+LastRegisterDate.toString());
-            
+
         } catch (JSONException e) {
             e.printStackTrace();
         }catch (Exception e) {
