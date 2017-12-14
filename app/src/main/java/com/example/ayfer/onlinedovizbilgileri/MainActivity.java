@@ -3,6 +3,8 @@ package com.example.ayfer.onlinedovizbilgileri;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Gereklı olan widgetlarımızı tanıttık
     EditText tlcon,dolarcon,eurocon,dolar_1,dolar_2,euro_1,euro_2;
+    Button btnconvert;
     TextView UptadeTime;
     float tlcon1, dolarcon1, eurocon1;
 
@@ -45,6 +48,41 @@ public class MainActivity extends AppCompatActivity {
         aq = new AQuery(curContext);
 
         loadData();
+
+        btnconvert.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            //Birimleri birbirine çevirmek için kullanılan kodlar
+            public void onClick(View v) {
+                float tlcon1 = Float.parseFloat(tlcon.getText().toString());
+                float dolarcon1 = Float.parseFloat(dolarcon.getText().toString());
+                float eurocon1 = Float.parseFloat(eurocon.getText().toString());
+
+                if(tlcon1!=0 && dolarcon1==0 && eurocon1==0){
+                    dolarcon1 = tlcon1/Float.parseFloat(dolar_1.getText().toString());
+                    eurocon1 = tlcon1/Float.parseFloat(euro_1.getText().toString());
+                    dolarcon.setText(Float.toString(dolarcon1));
+                    eurocon.setText(Float.toString(eurocon1));
+                }else if(dolarcon1!=0 && tlcon1==0 && eurocon1==0){
+                    tlcon1 = dolarcon1*Float.parseFloat(dolar_2.getText().toString());
+                    eurocon1 = dolarcon1*Float.parseFloat(dolar_2.getText().toString())/Float.parseFloat(euro_1.getText().toString());
+                    tlcon.setText(Float.toString(tlcon1));
+                    eurocon.setText(Float.toString(eurocon1));
+                }
+                //Eger birden fazla birim girildiyse yanlış deger almamak ıcın EditTextleri sıfırlıyoruz
+                else if(eurocon1!=0 && tlcon1==0 && dolarcon1==0){
+                    tlcon1 = eurocon1*Float.parseFloat(euro_2.getText().toString());
+                    dolarcon1 = eurocon1*Float.parseFloat(euro_2.getText().toString())/Float.parseFloat(dolar_1.getText().toString());
+                    tlcon.setText(Float.toString(tlcon1));
+                    eurocon.setText(Float.toString(eurocon1));
+                }else{
+                    tlcon.setText("0");
+                    dolarcon.setText("0");
+                    eurocon.setText("0");
+                }
+            }
+
+        });
     }
 
     public void findView(){
@@ -58,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         euro_2=(EditText)findViewById(R.id.editTextEuro2);
 
         UptadeTime = (TextView) findViewById(R.id.textViewTime1);
+
+        btnconvert =(Button)findViewById(R.id.buttonConvert);
     }
 
     public void loadData() {
