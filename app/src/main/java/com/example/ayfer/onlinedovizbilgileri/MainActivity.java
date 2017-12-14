@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Gereklı olan widgetlarımızı tanıttık
     EditText tlcon,dolarcon,eurocon,dolar_1,dolar_2,euro_1,euro_2;
-    Button btnconvert;
+    Button btnconvert, btnexit;
     TextView UptadeTime;
     float tlcon1, dolarcon1, eurocon1;
 
@@ -83,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        //Çıkış tusunun dinleyicisi
+        btnexit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void findView(){
@@ -95,9 +104,10 @@ public class MainActivity extends AppCompatActivity {
         euro_1=(EditText)findViewById(R.id.editTextEuro1);
         euro_2=(EditText)findViewById(R.id.editTextEuro2);
 
-        UptadeTime = (TextView) findViewById(R.id.textViewTime1);
+        UptadeTime =(TextView) findViewById(R.id.textViewTime1);
 
         btnconvert =(Button)findViewById(R.id.buttonConvert);
+        btnexit =(Button)findViewById(R.id.buttonExit);
     }
 
     public void loadData() {
