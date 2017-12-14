@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     tlcon1 = eurocon1*Float.parseFloat(euro_2.getText().toString());
                     dolarcon1 = eurocon1*Float.parseFloat(euro_2.getText().toString())/Float.parseFloat(dolar_1.getText().toString());
                     tlcon.setText(Float.toString(tlcon1));
-                    eurocon.setText(Float.toString(eurocon1));
+                    dolarcon.setText(Float.toString(dolarcon1));
                 }else{
                     tlcon.setText("0");
                     dolarcon.setText("0");
