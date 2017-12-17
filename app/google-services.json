@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "283156892454",
+    "firebase_url": "https://onlinedovizbilgileri.firebaseio.com",
+    "project_id": "onlinedovizbilgileri",
+    "storage_bucket": "onlinedovizbilgileri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283156892454:android:f622236f3b2c97fa",
+        "android_client_info": {
+          "package_name": "com.example.ayfer.onlinedovizbilgileri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283156892454-d1kafb4rug84r59l2in57c8nmandu7na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxDTfHqoZOxwJnzhrVmodZXURIt2artuA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
